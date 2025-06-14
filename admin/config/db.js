@@ -7,7 +7,7 @@ const DB_PASSWORD = process.env.DB_PASSWORD;
 const DB_PORT = process.env.DB_PORT;
 
 const DB_POOL = { min: 2, max: 50, acquireTimeoutMillis: 60 * 1000 ,createTimeoutMillis: 3000, idleTimeoutMillis : 60000,
-  // reapIntervalMillis: 1000,createRetryIntervalMillis: 100,propagateCreateError: true
+
 };
 
 const KnexHms = require("knex")({
@@ -17,10 +17,10 @@ const KnexHms = require("knex")({
     user: DB_USER,
     password: DB_PASSWORD,
     port: DB_PORT,
-    database: process.env.DB_NAME,
+    database: process.env.DB_NAME
     // socketPath: '/tmp/mysql.sock',
   },
-  pool: DB_POOL,
+  pool: DB_POOL
 });
 
 module.exports = { KnexHms };
